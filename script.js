@@ -70,7 +70,7 @@ bookContent.appendChild(readElement);
         deleteBtn.textContent = "Delete";
         deleteBtn.setAttribute("data-id", libraryBook.id);
 
-        // FIXED: Get ID when clicked (not when created) to avoid closure issues
+    
         deleteBtn.addEventListener("click", function(event) {
          const bookId = event.target.getAttribute("data-id");
          removeFromLibrary(bookId);
