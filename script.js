@@ -57,7 +57,7 @@ container.appendChild(bookContent);
 
 
 
-addBooksToLibrary("Harry Potter and the Sorcerer's Stone", "J.K. Rowling", 309, true);
+addBooksToLibrary("Hasrry Potter and the Sorcerer's Stone", "J.K. Rowling", 309, true);
 addBooksToLibrary("The Lord of the Rings", "J.R.R. Tolkien", 1178, false);
 addBooksToLibrary("To Kill a Mockingbird", "Harper Lee", 281, true);
 addBooksToLibrary("1984", "George Orwell", 328, false);
