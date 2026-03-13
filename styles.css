@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Open+Sans:wght@300..800&family=Roboto:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Skranji:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Skranji:wght@400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+     --body-text: "Skranji", system-ui;
+    --title-text: "Roboto", sans-serif;
+}
+.header{
+    width: 100%;
+    height: 50%;
+    padding: 30px 5px;
+    box-sizing: border-box;
+    display: flex;
+   justify-content: space-around;
+   background-color: beige;
+   border-bottom: 1px solid black;
+}
+a{
+   color: #242424;
+    text-decoration: none;
+}
+
+.left-logo{
+    cursor: pointer;
+    font-size: 2rem;
+}
+
+#addBtn{
+  font-size: 1.875rem;
+    font-weight: 600;
+    width: 15vw;
+    height: 10vh;
+    border: none;
+    background-color: #f0f0f0;
+
+  border-radius: 0.5rem;
+  box-shadow: 
+    inset 0 1px 0 0 #f4f4f4,
+    0 1px 0 0 #efefef,
+    0 2px 0 0 #ececec,
+    0 4px 0 0 #e0e0e0,
+    0 5px 0 0 #dedede,
+    0 6px 0 0 #dcdcdc,
+    0 7px 0 0 #cacaca,
+    0 7px 8px 0 #cecece;
+}
+
+#addBtn:hover {
+  transform: translateY(4px);
+  box-shadow: 
+    inset 0 1px 0 0 #f4f4f4,
+    0 1px 0 0 #efefef,
+    0 1px 0 0 #ececec,
+    0 2px 0 0 #e0e0e0,
+    0 2px 0 0 #dedede,
+    0 3px 0 0 #dcdcdc,
+    0 4px 0 0 #cacaca,
+    0 4px 6px 0 #cecece;
+}
+
+
+/* Main container that holds all cards */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  padding: 20px;
+}
+
+/* Individual card styling */
+.card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover animation */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+/* Title */
+.book-title {
+    font-family: var(--title-text);
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+/* Author */
+.book-author {
+  font-size: 0.95rem;
+  font-family: var(--body-text);
+  color: #555;
+  margin-bottom: 10px;
+}
+
+/* Pages */
+.book-pages {
+    font-family: var(--title-text);
+  font-size: 0.9rem;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+/* Read status styles */
+.book-read {
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  width: fit-content;
+  font-family: var(--title-text)
+}
+
+
+.read-true {
+  background-color: #d4f8d4;
+  color: #2b8a3e;
+}
+
+.read-false {
+  background-color: #ffe2e2;
+  color: #d43f3f;
+}
