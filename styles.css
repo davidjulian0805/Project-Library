@@ -155,11 +155,10 @@ a{
     border-radius: 10px;
     max-width: 500px;
     z-index: 1000;
-    width: 90%;  /* ✅ Added: responsive width */
-    max-height: 90vh;  /* ✅ Added: prevent overflow */
-    overflow-y: auto;  /* ✅ Added: scrollable if too tall */
-    box-shadow: 0 4px 20px rgba(0,0,0,0.2);  /* ✅ Added: nice shadow */
-    
+    width: 90%;  
+    max-height: 90vh; 
+    overflow-y: auto;  
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);  
 }
 
 #book-form h2 {
@@ -265,7 +264,7 @@ a{
 
 @media (max-width: 768px) {
     #book-form {
-        padding: 30px 20px;  /* ✅ Reduce padding on mobile */
+        padding: 30px 20px;  
         max-width: 95%;
     }
     
@@ -279,7 +278,7 @@ a{
     
     #book-form input {
         padding: 10px;
-        font-size: 16px;  /* ✅ Prevents zoom on iOS */
+        font-size: 16px; 
     }
     
     #book-form button {
@@ -302,7 +301,7 @@ a{
     #book-form {
         padding: 20px 15px;
         width: 95%;
-        top: 50%;  /* ✅ Keep it centered */
+        top: 50%; 
     }
     
     #book-form h2 {
