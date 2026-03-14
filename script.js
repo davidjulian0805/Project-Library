@@ -18,18 +18,20 @@ function addBooksToLibrary (title, author, pages, read){
 
      myLibrary.push(newBooks);
 }
-
+//function to remove a book
  function removeFromLibrary(id){
            myLibrary = myLibrary.filter(book => book.id !== id);
            
            }
 
+//function for read status
            function readStatus(id){
             const book = myLibrary.find(book => book.id === id);
             if(book){
                 book.read = !book.read;
             }
            }
+
 function displayBooks(){
 
     //prevent default books from showing when adding new books
@@ -62,25 +64,43 @@ bookContent.appendChild(pagesElement);
 
 const readElement = document.createElement("p");
 readElement.classList.add("book-read");  
-readElement.textContent = libraryBook.read;
+
+readElement.textContent = libraryBook.read ? "Read" : "Unread";
 bookContent.appendChild(readElement);
 
-
  const deleteBtn = document.createElement("button");
-        deleteBtn.textContent = "Delete";
-        deleteBtn.setAttribute("data-id", libraryBook.id);
+deleteBtn.textContent = "Delete";
+deleteBtn.setAttribute("data-id", libraryBook.id);
 
-    
-        deleteBtn.addEventListener("click", function(event) {
+    deleteBtn.addEventListener("click", function(event) {
          const bookId = event.target.getAttribute("data-id");
          removeFromLibrary(bookId);
          displayBooks();
         });
 
+const toggleElement = document.createElement("button");
+toggleElement.textContent = libraryBook.read ? "Read" : "Unread";
+toggleElement.setAttribute("data-id", libraryBook.id);
+
+if (libraryBook.read) {
+    toggleElement.classList.add("btn-read");
+} else {
+    toggleElement.classList.add("btn-unread");
+}
+
+toggleElement.addEventListener("click", function(event){
+    const bookId = event.target.getAttribute("data-id");
+    readStatus(bookId);
+    displayBooks();
+})
+
+    
+    
 
 const container = document.querySelector(".card-container");
 container.appendChild(bookContent);
 bookContent.appendChild(deleteBtn);
+bookContent.appendChild(toggleElement);
 
 
 }
@@ -96,10 +116,10 @@ form.addEventListener("submit", function(event) {
     const pages = document.getElementById("pages").value;
     const read = document.getElementById("read").checked; 
     
-    // Add book to library
+    // add book to library
     addBooksToLibrary(title, author, pages, read);
     
-    // Clear the form
+    // clear the form
     form.reset();
     
   displayBooks();
@@ -109,7 +129,7 @@ const closeBtn = document.getElementById("closeBtn");
 
 closeBtn.addEventListener("click", function() {
     const form = document.getElementById("book-form");
-    form.style.display = "none";  // Hide the form
+    form.style.display = "none"; 
 });
 
 const addBtn = document.getElementById("addBtn");
@@ -128,12 +148,6 @@ addBtn.addEventListener("click", function() {
     }
 });
 
-
-addBooksToLibrary("Harry Potter and the Sorcerer's Stone", "J.K. Rowling", 309, true);
-addBooksToLibrary("The Lord of the Rings", "J.R.R. Tolkien", 1178, false);
-addBooksToLibrary("To Kill a Mockingbird", "Harper Lee", 281, true);
-addBooksToLibrary("1984", "George Orwell", 328, false);
-addBooksToLibrary("The Great Gatsby", "F. Scott Fitzgerald", 180, true); 
 
 addBooksToLibrary("Harry Potter and the Sorcerer's Stone", "J.K. Rowling", 309, true);
 addBooksToLibrary("The Lord of the Rings", "J.R.R. Tolkien", 1178, false);
