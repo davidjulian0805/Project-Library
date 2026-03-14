@@ -154,8 +154,11 @@ a{
     padding: 50px;
     border-radius: 10px;
     max-width: 500px;
-    z-index: 1000; 
-   
+    z-index: 1000;
+    width: 90%;  /* ✅ Added: responsive width */
+    max-height: 90vh;  /* ✅ Added: prevent overflow */
+    overflow-y: auto;  /* ✅ Added: scrollable if too tall */
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);  /* ✅ Added: nice shadow */
     
 }
 
@@ -229,13 +232,6 @@ a{
     background-color: #660000;
 }
 
-
-@media (max-width: 480px) {
-  #book-form {
-    margin: 20px;
-  }
-}
-
 .card button.btn-read {
     background-color: #4CAF50;  
     color: white;
@@ -267,3 +263,50 @@ a{
     }
 }
 
+@media (max-width: 768px) {
+    #book-form {
+        padding: 30px 20px;  /* ✅ Reduce padding on mobile */
+        max-width: 95%;
+    }
+    
+    #book-form h2 {
+        font-size: 1.5rem;
+    }
+    
+    #book-form label {
+        font-size: 0.9rem;
+    }
+    
+    #book-form input {
+        padding: 10px;
+        font-size: 16px;  /* ✅ Prevents zoom on iOS */
+    }
+    
+    #book-form button {
+        padding: 12px 20px;
+        font-size: 0.95rem;
+    }
+
+    .header {
+      text-align: center;
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    #addBtn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    #book-form {
+        padding: 20px 15px;
+        width: 95%;
+        top: 50%;  /* ✅ Keep it centered */
+    }
+    
+    #book-form h2 {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+    }
+}
