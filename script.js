@@ -2,6 +2,7 @@
 let myLibrary = [];
 
 
+//using class instead of plain constructor
 class Book {
     constructor (title, author, pages, read){
     this.title = title;
@@ -10,6 +11,10 @@ class Book {
     this.read = read;
      this.id = crypto.randomUUID(); 
 }
+
+    toggleRead() {
+        this.read = !this.read;
+    }
 }
 
 
@@ -30,7 +35,7 @@ function addBooksToLibrary (title, author, pages, read){
            function readStatus(id){
             const book = myLibrary.find(book => book.id === id);
             if(book){
-                book.read = !book.read;
+                book.toggleRead();
             }
            }
 
